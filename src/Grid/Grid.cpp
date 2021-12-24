@@ -20,9 +20,15 @@ Grid :: Grid(const std::string& filename) {
     std::string line;
     std::string strMap;
     std::getline(in, line);
+    std::getline(in, line);
     std::stringstream ss(line);
     int width_, height_;
-    ss >> width_ >> height_;
+    std::string smh;
+    ss >> smh >> width_;
+    std::getline(in, line);
+    std::stringstream ss1(line);
+    ss1 >> smh >> height_;
+    std::getline(in, line);
     while (std::getline(in, line)) {
         strMap += line;
     }

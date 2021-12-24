@@ -10,6 +10,7 @@ int test () {
         std::ifstream in;
         in.open(dirEntry.path().filename().generic_string() + ".scen", std::ios::in);
         std::string line;
+        std::getline(in, line);
         while (std::getline(in, line)) {
             std::stringstream ss(line);
             int num, wd, ht, startX, startY, goalX, goalY, optimal_length;
@@ -23,6 +24,7 @@ int test () {
             out.open(dirEntry.path().filename().generic_string() + ".result");
             out << dirEntry.path().filename().generic_string() << '\n';
             out << ht << ' ' << wd << '\n';
+            out << length << width << '\n';
             out << startX << ' ' <<  startY << '\n';
             out << goalX << ' ' << goalY << '\n';
             for (auto node : path) {
