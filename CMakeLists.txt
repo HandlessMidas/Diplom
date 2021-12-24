@@ -17,4 +17,5 @@ add_executable(Diplom
         src/Grid/Grid.h
         src/Grid/Point.cpp
         src/Grid/Point.h
-        src/main.cpp)
+        src/main.cpp
+        src/test.cpp)

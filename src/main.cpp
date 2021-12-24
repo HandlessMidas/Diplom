@@ -28,11 +28,6 @@ int main(int argc, char *argv[]) {
     auto* robot = new Robot(1, 1, 0, "filename", start, goal);
     auto result = AStar(*grid, *robot, DiagonalDistance, TimeTie);
     auto path = MakePath(std::get<1>(result));
-    for (const auto& dirEntry : std::experimental::filesystem::recursive_directory_iterator("../tests/maps")) {
-        grid = new Grid(dirEntry.path().filename());
-        robot = new Robot();
-        auto result = AStar(*grid, *robot, DiagonalDistance, TimeTie);
-        auto path = MakePath(std::get<1>(result));
-    }
+
 
 }
